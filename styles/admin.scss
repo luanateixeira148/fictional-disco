@@ -1,0 +1,85 @@
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+
+// Orders waiting for confirmation
+
+.pending-orders {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.pending-order-details {
+  width: 100vw;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.individual-order-details {
+  margin: 10px;
+}
+
+.indidual-order-input form {
+  display: flex;
+  flex-direction: column;
+  align-items:center;
+  justify-content: space-around;
+}
+
+.indidual-order-input input {
+  width: 150px;
+  padding: 5px;
+  margin: 10px;
+}
+
+.indidual-order-input button {
+  width: 150px;
+  padding: 5px;
+  margin: 10px;
+  background-color: #FFCB88;
+  border: none;
+  border-radius: 6px;
+}
+
+//  Confirmed Orders
+
+// Typography
+h1 {
+  font-family: 'Averia Sans Libre', cursive;
+  color: #6C3E26;
+}
+
+h2 {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 12pt;
+}
+
+h3 {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 11pt;
+}
+
+p {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 12pt;
+}
+
+li {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: lighter;
+  font-size: 10pt;
+}
+
+button {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 12pt;
+  color: white;
+}

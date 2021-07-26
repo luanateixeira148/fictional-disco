@@ -3,38 +3,64 @@
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">å
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- External CSS -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Averia+Sans+Libre&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="../styles/admin.css">
+  <link rel="stylesheet" href="../styles/typography.css">
+
   <title>Admin</title>
 </head>
 <body>
   <%- include('partials/_header') %>
   <main>
-    <div id="pending-orders">
+    <div class="pending-orders">
       <h1>
         Orders waiting for confirmation
       </h1>
+      <!-- Template for individual orders -->
       <div class="pending-order-details">
-        <span class="individual-order-details">
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae, sequi cumque.</p>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae, sequi cumque.</p>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae, sequi cumque.</p>
-        </span>
-        <span class="indidual-order-input">
+        <div class="individual-order-details">
+          <h2>Client Name</h2>
+          <h3>Order #1234</h3>
+          <h3>Time placed</h3>
+          <ul>
+            <li>Order Item, quantity: 1</li>
+            <li>Order Item, quantity: 1</li>
+            <li>Order Item, quantity: 1</li>
+          </ul>
+        </div>
+        <div class="indidual-order-input">
           <form action="">
             <input type="text">
             <button>Confirm Order</button>
           </form>
-        </span>
+        </div>
       </div>
     </div>
-    <div id="confirmed-orders">
+    <div class="confirmed-orders">
       <h1>
         Confirmed Orders
       </h1>
       <span class="individual-order-details">
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae, sequi cumque.</p>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae, sequi cumque.</p>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae, sequi cumque.</p>
+        <div class="individual-order-details">
+          <h2>Client Name</h2>
+          <h3>Order #1234</h3>
+          <h3>Time placed</h3>
+          <ul>
+            <li>Order Item</li>
+            <li>Order Item</li>
+            <li>Order Item</li>
+          </ul>
+        </div>
       </span>
     </div>
   </main>
