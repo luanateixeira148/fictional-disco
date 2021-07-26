@@ -1,6 +1,5 @@
 main {
   width: 100%;
-  background-color: hotpink;
 
   .category-one {
     display: flex;
@@ -18,10 +17,28 @@ main {
       flex-wrap: wrap;
 
       .item-card {
-        margin: 10px;
-        width: 50px;
-        height: 100px;
-        background-color: indigo;
+        margin: 50px;
+        padding: 20px;
+        width: 200px;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        border: 1px solid grey;
+        border-radius: 5px;
+
+        .food-photo {
+          width: 200px;
+          height: 200px;
+          background-color: hotpink;
+        }
+
+        button {
+          align-self: center;
+        }
+
       }
 
     }
