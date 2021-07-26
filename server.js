@@ -35,11 +35,23 @@ app.use(express.static("public"));
 // Note: Feel free to replace the example routes below with your own
 const usersRoutes = require("./routes/users");
 const widgetsRoutes = require("./routes/widgets");
+const menuRouter = require("./routes/menu");
+const adminRouter = require("./routes/admin");
+const homeRouter = require("./routes/home");
+const orderConfirmationRouter = require("./routes/order_confirmation");
+const orderDetailsRouter = require("./routes/order_details");
+const waitingConfirmation = require("./routes/waiting_confirmation");
 
 // Mount all resource routes
 // Note: Feel free to replace the example routes below with your own
 app.use("/api/users", usersRoutes(db));
 app.use("/api/widgets", widgetsRoutes(db));
+app.use("/menu", menuRouter);
+app.use("/admin", adminRouter);
+app.use("/home", homeRouter);
+app.use("/order_confirmation", orderConfirmationRouter);
+app.use("/order_details", orderDetailsRouter);
+app.use("/waiting_confirmation", waitingConfirmation);
 // Note: mount other resources here, using the same pattern above
 
 
