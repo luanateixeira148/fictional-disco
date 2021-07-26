@@ -1,52 +1,85 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
 main {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  width: 100vw;
 }
 
 
 // Orders waiting for confirmation
 
-.pending-orders {
+.waiting-confirmation {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  width: 60%;
+  margin: 20px;
 }
 
-.pending-order-details {
-  width: 100vw;
+.waiting-confirmation .main {
+  width: 100%;
   display: flex;
   flex-direction: row;
-  align-items: center;
-  justify-content: center;
-}
-
-.individual-order-details {
-  margin: 10px;
-}
-
-.indidual-order-input form {
-  display: flex;
-  flex-direction: column;
-  align-items:center;
   justify-content: space-around;
 }
 
-.indidual-order-input input {
-  width: 150px;
-  padding: 5px;
+.waiting-confirmation .main > .left {
+
+}
+
+.waiting-confirmation .main > .right{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.waiting-confirmation .main > .right > form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+hr {
+  width: 100%;
+  color: gray;
   margin: 10px;
 }
 
-.indidual-order-input button {
-  width: 150px;
-  padding: 5px;
+button.confirm {
+  border: 1px solid green;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 12pt;
+  color: green;
+  background-color: transparent;
+  box-shadow: none;
+  border-radius: 5px;
+  padding: 7px 3px;
   margin: 10px;
-  background-color: #FFCB88;
-  border: none;
-  border-radius: 6px;
 }
 
-//  Confirmed Orders
+button.confirm:hover {
+  border: 1px solid green;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 12pt;
+  color: white;
+  background-color: green;
+  box-shadow: none;
+  border-radius: 5px;
+  padding: 7px 3px;
+  margin: 10px;
+  cursor: pointer;
+}
+
+input {
+  border: 1px solid gray;
+  border-radius: 5px;
+  padding: 10px 5px;
+  margin: 10px;
+}

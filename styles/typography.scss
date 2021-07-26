@@ -1,11 +1,12 @@
 h1 {
   font-family: 'Averia Sans Libre', cursive;
+  font-size: 22pt;
   color: #6C3E26;
 }
 
 h2 {
   font-family: 'Open Sans', sans-serif;
-  font-size: 12pt;
+  font-size: 20pt;
 }
 
 h3 {
@@ -24,8 +25,14 @@ li {
   font-size: 10pt;
 }
 
-button {
+// button {
+//   font-family: 'Open Sans', sans-serif;
+//   font-size: 12pt;
+//   color: white;
+// }
+
+label {
   font-family: 'Open Sans', sans-serif;
-  font-size: 12pt;
-  color: white;
+  font-weight: lighter;
+  font-size: 10pt;
 }
