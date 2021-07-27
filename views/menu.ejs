@@ -29,19 +29,20 @@
       </div>
       <div class="menu-items">
         <!-- start of template for item card -->
+        <% for (let item of menuItems) { %>
         <div class="item-card">
-          <img class="food-photo" src="../public/images/placeholder.png" alt="">
+          <img class="food-photo" src=<%= item.photo_url %> alt="">
           <div class="details">
-            <h3>Item Name</h3>
-            <h4>Item Description Item Description Item Description </h4>
-            <h4>$10.00</h4>
+            <h3><%= item.name %></h3>
+            <h4><%= item.description %></h4>
+            <h4><%= item.price %></h4>
           </div>
           <form action="">
             <input class="qty" type="number">
             <button class="confirm">Add to order</button>
           </form>
-
         </div>
+        <% }; %>
         <!-- end of template for item card -->
       </div>
     </div>
