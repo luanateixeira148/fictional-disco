@@ -39,14 +39,16 @@ router.get ('/', (req, res) => {
 // POST route to add item to cart by setting cookies
 router.post('/', (req, res) => {
   const templateVars = { menuItems: tempMenuDatabase };
+  const product = req.body.item_name;
   const quantity = req.body.qty;
 
-  console.log(quantity);
-  // how to get the name of the item?
-  res.cookie('quantity', quantity);
+  res.cookie(product, quantity);
 
-  // how to stay on the same page after submitting the request?
-  res.redirect('/order_details');
+  console.log('product:', product, 'quantity:', quantity)
+
+  res.redirect('/menu');
 })
 
 module.exports = router;
+
+
