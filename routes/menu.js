@@ -31,4 +31,18 @@ router.get ('/', (req, res) => {
 });
 
 
+// Setting cookies
+
+const cookieParser = require('cookie-parser')
+const bodyParser = require("body-parser");
+const app = express()
+app.use(cookieParser())
+app.use(bodyParser.urlencoded({ extended: true }));
+
+
+// POST add item to cart by setting cookies
+app.post('/addToCart', (req, res) => {
+
+})
+
 module.exports = router;
