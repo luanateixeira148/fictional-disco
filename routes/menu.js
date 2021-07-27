@@ -1,5 +1,11 @@
 const express = require('express');
+const cookieParser = require('cookie-parser')
+const bodyParser = require("body-parser");
+const app = express();
 const router = express.Router();
+
+app.use(cookieParser());
+app.use(bodyParser.urlencoded({ extended: true }));
 
 const tempMenuDatabase = [
   {
@@ -25,22 +31,12 @@ const tempMenuDatabase = [
 router.get ('/', (req, res) => {
 
   const templateVars = { menuItems: tempMenuDatabase };
-
   res.render('menu', templateVars);
 
 });
 
 
-// Setting cookies
-
-const cookieParser = require('cookie-parser')
-const bodyParser = require("body-parser");
-const app = express();
-app.use(cookieParser());
-app.use(bodyParser.urlencoded({ extended: true }));
-
-
-// POST add item to cart by setting cookies
+// POST route to add item to cart by setting cookies
 router.post('/', (req, res) => {
   const templateVars = { menuItems: tempMenuDatabase };
   const quantity = req.body.qty;
