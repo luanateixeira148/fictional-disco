@@ -39,31 +39,44 @@ router.get ('/', (req, res) => {
 // POST route to add item to cart by setting cookies and returning to the same page
 router.post('/', (req, res) => {
 
+  let cartText = req.cookies['cart'];
+
+  console.log(cartText);
+  let cart = JSON.parse(cartText);
+
+  if (!cart) {
+    cart = {items: []};
+  }
+
+  if (!cart.items) {
+    cart.items = [];
+  }
+
+  console.log('previous cart:', cart);
+
+  console.log('cart.items:', cart.items);
   const product = req.body.item_name;
   const quantity = req.body.qty;
 
-  if (!req.cookies['cart']) {
+  cart.items.push({product, quantity});
 
-    const initialOrder = JSON.stringify([{product, quantity}]);
-    res.cookie('cart', initialOrder);
 
-  } else {
+  // create addToCart function,
+  // const cart = updateCart(req, product, quantity)
 
-  console.log('req.cookies:', req.cookies);
-  let cartText = req.cookies.cart;
+  res.cookie('cart', JSON.stringify(cart));
 
-  let cart = JSON.parse(cartText);
-
-  // cart.push({product, quantity});
-  let updatedCart = [{product, quantity}, ...cart]
-
-  res.cookie('cart', JSON.stringify(updatedCart));
-  console.log('updated cart:', req.cookies.cart);
-
-  }
+  console.log('new cart:', cart);
 
   res.redirect('/menu');
 });
 
+
+/*
+set cookie as empty object (json?)
+everytime someone add something to the order, loop through the cookie object and see if there is key
+if yes, change quantity
+if no, create key
+*/
 
 module.exports = router;
