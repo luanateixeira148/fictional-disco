@@ -57,6 +57,12 @@ main {
 
   }
 
+  .confirmation {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+  }
+
 }
 
 

@@ -1,6 +1,5 @@
 footer {
   height: 200px;
-  width: 100vw;
 
   display: flex;
   flex-direction: row;
@@ -9,6 +8,7 @@ footer {
 
   background-color: #FFC5D8;
   padding: 0 40px;
+  margin: 0;
 
   .left {
     width: 50%;
