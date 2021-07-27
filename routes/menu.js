@@ -36,19 +36,34 @@ router.get ('/', (req, res) => {
 });
 
 
-// POST route to add item to cart by setting cookies
+// POST route to add item to cart by setting cookies and returning to the same page
 router.post('/', (req, res) => {
-  const templateVars = { menuItems: tempMenuDatabase };
+
   const product = req.body.item_name;
   const quantity = req.body.qty;
 
-  res.cookie(product, quantity);
+  if (!req.cookies['cart']) {
 
-  console.log('product:', product, 'quantity:', quantity)
+    const initialOrder = JSON.stringify([{product, quantity}]);
+    res.cookie('cart', initialOrder);
+
+  } else {
+
+  console.log('req.cookies:', req.cookies);
+  let cartText = req.cookies.cart;
+
+  let cart = JSON.parse(cartText);
+
+  // cart.push({product, quantity});
+  let updatedCart = [{product, quantity}, ...cart]
+
+  res.cookie('cart', JSON.stringify(updatedCart));
+  console.log('updated cart:', req.cookies.cart);
+
+  }
 
   res.redirect('/menu');
-})
+});
+
 
 module.exports = router;
-
-

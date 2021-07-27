@@ -38,7 +38,7 @@
             <h4><%= item.price %></h4>
           </div>
           <form action="/addToCart" method="POST">
-            <input type="hidden" value=<%= item.name %> name="item_name">
+            <input type="hidden" name="item_name" value=<%= item.name %> >
             <input class="qty" name='qty' type="number">
             <button class="confirm">Add to order</button>
           </form>
@@ -48,7 +48,7 @@
       </div>
     </div>
     <div class="confirmation">
-      <form action="">
+      <form action="/order_details" method="POST">
         <button class="confirm">Checkout</button>
       </form>
     </div>

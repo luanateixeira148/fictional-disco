@@ -5,18 +5,16 @@ const router         = express.Router();
 
 app.use(cookieParser());
 
-// GET /order_details
-router.get ('/', (req, res) => {
+// should this be a POST ? /order_details
+router.post ('/', (req, res) => {
 
   const order = req.cookies;
   const templateVars = {
-    product: 'product name',
-    quantity: req.cookies['quantity']
+    order
   }
 
   console.log('ORDER:', order);
   res.render('order_details', templateVars);
 });
-
 
 module.exports = router;

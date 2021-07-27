@@ -44,6 +44,7 @@ const orderConfirmationRouter = require("./routes/order_confirmation");
 const orderDetailsRouter = require("./routes/order_details");
 const waitingConfirmation = require("./routes/waiting_confirmation");
 const addToCart = require("./routes/menu");
+// const checkout = require("./routes/checkout");
 
 // Mount all resource routes
 // Note: Feel free to replace the example routes below with your own
@@ -56,8 +57,9 @@ app.use("/order_confirmation", orderConfirmationRouter);
 app.use("/order_details", orderDetailsRouter);
 app.use("/waiting_confirmation", waitingConfirmation);
 
-// Post
+// Post routes
 app.use("/addToCart", addToCart);
+// app.use("/checkout", checkout);
 // Note: mount other resources here, using the same pattern above
 
 
