@@ -9,10 +9,13 @@ app.use(cookieParser());
 router.get ('/', (req, res) => {
 
   const order = req.cookies;
+  const templateVars = {
+    product: 'product name',
+    quantity: req.cookies['quantity']
+  }
 
   console.log('ORDER:', order);
-
-  res.render('order_details');
+  res.render('order_details', templateVars);
 });
 
 
