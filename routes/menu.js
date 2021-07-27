@@ -4,19 +4,43 @@ const router = express.Router();
 const tempMenuDatabase = [
   {
     id: 1,
-    name: 'Rapberry Ice Cream',
-    description: 'Delicious raspberry ice cream',
-    price: '$11',
-    photo_url: 'https://d2cbg94ubxgsnp.cloudfront.net/Pictures/1024x536/4/0/8/132408_shutterstock_406445776.jpg',
-    category: 'Fruity'
+    name: 'Brown Sugar Milk Tea',
+    description: 'Signature milk tea with brown sugar syrup',
+    price: '$5',
+    photo_url: 'https://www.ohhowcivilized.com/wp-content/uploads/brown-sugar-tea-latte-7.jpg',
+    category: 'Milky'
   },
   {
     id: 2,
-    name: 'Lemon Ice Cream',
-    description: 'Amazing lemon ice cream',
-    price: '$9',
-    photo_url: 'https://www.seasonsandsuppers.ca/wp-content/uploads/2016/02/lemon-icecream1200.jpg',
-    category: 'Fruity'
+    name: 'Matcha Milk Tea',
+    description: 'Earthy matcha mixed with fresh milk',
+    price: '$5',
+    photo_url: 'https://www.ohhowcivilized.com/wp-content/uploads/iced-matcha-latte-10.jpg',
+    category: 'Milky'
+  },
+  {
+    id: 3,
+    name: 'Earl Grey Milk Tea',
+    description: 'Bold and rich milk tea with a hint of bergamot',
+    price: '$5',
+    photo_url: 'https://www.ohhowcivilized.com/wp-content/uploads/starbucks-iced-chai-tea-latte-8.jpg',
+    category: 'Milky'
+  },
+  {
+    id: 4,
+    name: 'Thai Milk Tea',
+    description: 'Robust black tea sweetened with evaporated milk',
+    price: '$5',
+    photo_url: 'https://www.ohhowcivilized.com/wp-content/uploads/thai-iced-tea-7.jpg',
+    category: 'Milky'
+  },
+  {
+    id: 5,
+    name: 'Roasted Milk Tea',
+    description: 'Delicious Japanese milk tea topped with pearls',
+    price: '$5',
+    photo_url: 'https://www.ohhowcivilized.com/wp-content/uploads/bubble-tea-5.jpg',
+    category: 'Milky'
   },
 ]
 

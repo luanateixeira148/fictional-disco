@@ -43,8 +43,11 @@
           <img class="food-photo" src=<%= item.photo_url %> alt="">
           <div class="details">
             <h3><%= item.name %></h3>
-            <h4><%= item.description %></h4>
-            <h4><%= item.price %></h4>
+            <p><%= item.description %></p>
+            <div class="price-tag">
+              <p id="price"><%= item.price %></p>
+              <p id="category"><%= item.category %></p>
+            </div>
           </div>
           <form action="POST">
             <input class="qty" name='qty' type="number">
