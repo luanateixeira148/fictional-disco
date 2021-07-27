@@ -37,8 +37,8 @@
             <h4><%= item.description %></h4>
             <h4><%= item.price %></h4>
           </div>
-          <form action="">
-            <input class="qty" type="number">
+          <form action="POST">
+            <input class="qty" name='qty' type="number">
             <button class="confirm">Add to order</button>
           </form>
         </div>
@@ -46,6 +46,12 @@
         <!-- end of template for item card -->
       </div>
     </div>
+    <div class="confirmation">
+      <form action="POST">
+        <button class="confirm">Checkout</button>
+      </form>
+    </div>
+
   </main>
   <%- include('partials/_footer') %>
 </body>

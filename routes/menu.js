@@ -1,7 +1,6 @@
 const express = require('express');
 const router = express.Router();
 
-
 const tempMenuDatabase = [
   {
     id: 1,
@@ -22,6 +21,7 @@ const tempMenuDatabase = [
 ]
 
 // GET /menu
+/* Render the menu page */
 router.get ('/', (req, res) => {
 
   const templateVars = { menuItems: tempMenuDatabase };
@@ -29,5 +29,6 @@ router.get ('/', (req, res) => {
   res.render('menu', templateVars);
 
 });
+
 
 module.exports = router;
