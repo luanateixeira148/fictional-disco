@@ -25,6 +25,8 @@
   <main>
     <div class="category-one">
       <div class="header">
+
+
         <h1>Category 1</h1>
       </div>
       <div class="menu-items">
@@ -37,7 +39,7 @@
             <h4><%= item.description %></h4>
             <h4><%= item.price %></h4>
           </div>
-          <form action="POST">
+          <form action="/addToCart" method="POST">
             <input class="qty" name='qty' type="number">
             <button class="confirm">Add to order</button>
           </form>
@@ -47,7 +49,7 @@
       </div>
     </div>
     <div class="confirmation">
-      <form action="POST">
+      <form action="">
         <button class="confirm">Checkout</button>
       </form>
     </div>

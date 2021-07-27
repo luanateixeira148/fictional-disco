@@ -35,14 +35,22 @@ router.get ('/', (req, res) => {
 
 const cookieParser = require('cookie-parser')
 const bodyParser = require("body-parser");
-const app = express()
-app.use(cookieParser())
+const app = express();
+app.use(cookieParser());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 
 // POST add item to cart by setting cookies
-app.post('/addToCart', (req, res) => {
+router.post('/', (req, res) => {
+  const templateVars = { menuItems: tempMenuDatabase };
+  const quantity = req.body.qty;
 
+  console.log(quantity);
+  // how to get the name of the item?
+  res.cookie('quantity', quantity);
+
+  // how to stay on the same page after submitting the request?
+  res.redirect('/order_details');
 })
 
 module.exports = router;
