@@ -1,0 +1,13 @@
+header {
+  height: 100px;
+  width: 100vw;
+  background-color: #FFC5D8;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+header .logo {
+  margin-left: 40px;
+}

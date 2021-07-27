@@ -1,9 +1,39 @@
 // See: https://sass-lang.com/
 
 body {
-  background-color: #EEE;
+  background-color: rgb(250, 250, 250);
+  margin: 0;
+  padding: 0;
+}
 
-  h1 {
-    color: #244751;
-  }
+button.confirm {
+  border: 1px solid green;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 12pt;
+  color: green;
+  background-color: transparent;
+  box-shadow: none;
+  border-radius: 5px;
+  padding: 7px 10px;
+  margin: 5px;
+}
+
+button.confirm:hover {
+  border: 1px solid green;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 12pt;
+  color: white;
+  background-color: green;
+  box-shadow: none;
+  border-radius: 5px;
+  padding: 7px 10px;
+  margin: 5px;
+  cursor: pointer;
+}
+
+input {
+  border: 1px solid gray;
+  border-radius: 5px;
+  padding: 10px 5px;
+  margin: 10px;
 }

@@ -4,9 +4,68 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- External CSS -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Averia+Sans+Libre&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="../styles/admin.css">
+  <link rel="stylesheet" href="../styles/layout.css">
+  <link rel="stylesheet" href="../styles/typography.css">
+
   <title>Admin</title>
 </head>
 <body>
-  <h1>adming.ejs</h1>
+  <%- include('partials/_header') %>
+  <main>
+    <!-- Start of Template for incoming individual orders -->
+    <div class="waiting-confirmation">
+      <div class="header">
+        <h2>Orders waiting for confirmation</h2>
+      </div>
+      <div class="main">
+        <div class="left">
+          <h3>Customer Name</h3>
+          <h3>Order Number</h2>
+          <ul>
+            <li>Order Item, quantity</li>
+            <li>Order Item, quantity</li>
+            <li>Order Item, quantity</li>
+          </ul>
+        </div>
+        <div class="right">
+          <form action="">
+            <input class="estimated-time" type="text" placeholder="Enter pickup time">
+            <button type="submit" class="confirm">Accept Order</button>
+          </form>
+        </div>
+      </div>
+      <hr>
+    </div>
+    <!-- End of Template for incoming individual orders -->
+    <!-- Start of Template for Confirmed Orders -->
+    <div class="confirmed-orders">
+      <div class="header">
+        <h2>Confirmed Orders</h2>
+      </div>
+      <div class="main">
+        <div>
+          <h3>Customer Name</h3>
+          <h3>Order Number</h2>
+          <ul>
+            <li>Order Item, quantity</li>
+            <li>Order Item, quantity</li>
+            <li>Order Item, quantity</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!-- End of Template for Confirmed Orders -->
+  </main>
 </body>
 </html>

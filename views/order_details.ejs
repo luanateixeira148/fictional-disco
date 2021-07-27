@@ -5,8 +5,38 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Oder Details</title>
+
+  <!-- External CSS -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Averia+Sans+Libre&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="../styles/order_details.css">
+  <link rel="stylesheet" href="../styles/layout.css">
+  <link rel="stylesheet" href="../styles/typography.css">
+
 </head>
 <body>
-  <h1>order_details.ejs</h1>
+  <%- include('partials/_header') %>
+  <main>
+    <h2>Your Order Details</h2>
+    <div class="items-list">
+      <ul>
+        <li>Order Item, quantity</li>
+        <li>Order Item, quantity</li>
+        <li>Order Item, quantity</li>
+      </ul>
+    </div>
+    <form action="">
+      <button class="confirm" type="submit">
+        Confirm Order
+      </button>
+    </form>
+  </main>
+  <%- include('partials/_footer') %>
 </body>
 </html>

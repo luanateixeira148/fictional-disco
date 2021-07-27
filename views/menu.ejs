@@ -4,9 +4,48 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- External CSS -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Averia+Sans+Libre&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="../styles/menu.css">
+  <link rel="stylesheet" href="../styles/layout.css">
+  <link rel="stylesheet" href="../styles/typography.css">
+
   <title>Menu</title>
 </head>
 <body>
-  <h1>menu.ejs</h1>
+  <%- include('partials/_header') %>
+  <main>
+    <div class="category-one">
+      <div class="header">
+        <h1>Category 1</h1>
+      </div>
+      <div class="menu-items">
+        <!-- start of template for item card -->
+        <div class="item-card">
+          <img class="food-photo" src="../public/images/placeholder.png" alt="">
+          <div class="details">
+            <h3>Item Name</h3>
+            <h4>Item Description Item Description Item Description </h4>
+            <h4>$10.00</h4>
+          </div>
+          <form action="">
+            <input class="qty" type="number">
+            <button class="confirm">Add to order</button>
+          </form>
+
+        </div>
+        <!-- end of template for item card -->
+      </div>
+    </div>
+  </main>
+  <%- include('partials/_footer') %>
 </body>
 </html>
