@@ -27,7 +27,7 @@ CREATE TABLE items (
   id SERIAL PRIMARY KEY NOT NULL,
   name VARCHAR(255) NOT NULL,
   description TEXT,
-  price INTEGER NOT NULL,
+  price DECIMAL(4,2) NOT NULL,
   photo_url VARCHAR(255) NOT NULL,
   category_id INTEGER REFERENCES categories(id) ON DELETE CASCADE
 );
