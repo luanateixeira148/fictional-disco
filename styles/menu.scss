@@ -17,7 +17,7 @@ main {
       flex-wrap: wrap;
 
       .item-card {
-        margin: 50px;
+        margin: 20px;
         padding: 20px;
         width: 200px;
 
@@ -35,8 +35,20 @@ main {
           background-color: hotpink;
         }
 
-        button {
-          align-self: center;
+        .details {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: flex-start;
+        }
+
+        .form {
+          display: flex;
+          flex-direction: row;
+        }
+
+        input.qty {
+          width: 35px;
         }
 
       }
@@ -46,3 +58,6 @@ main {
   }
 
 }
+
+
+
