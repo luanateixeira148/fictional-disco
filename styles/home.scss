@@ -1,17 +1,31 @@
-main {
+.welcome {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-
   padding: 10% 0;
+  background-image: url('https://media.istockphoto.com/vectors/boba-tea-seamless-pattern-vector-bubble-milk-tea-scarf-isolated-tile-vector-id1218097774?b=1&k=6&m=1218097774&s=612x612&w=0&h=kcgYrffsPQYye0lqox_30kSYOEWSQEwVslhWnu38dN0=');
+}
+
+.welcome-message {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: white;
+  padding: 1em;
+  margin-top: 5em;
+}
+
+#welcome-slogan {
+  margin-top: 0;
 }
 
 button.order {
-  border: 1px solid #ff07ea;
+  border: 1px solid #e698b0;
   font-family: 'Open Sans', sans-serif;
   font-size: 12pt;
-  color: #ff07ea;
+  color: #e698b0;
   background-color: transparent;
   box-shadow: none;
   border-radius: 5px;
@@ -20,14 +34,7 @@ button.order {
 }
 
 button.order:hover {
-  border: 1px solid #ff07ea;
-  font-family: 'Open Sans', sans-serif;
-  font-size: 12pt;
   color: white;
-  background-color: #ff07ea;
-  box-shadow: none;
-  border-radius: 5px;
-  padding: 7px 15px;
-  margin: 10px;
+  background-color: #e698b0;
   cursor: pointer;
 }
