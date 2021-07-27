@@ -6,15 +6,18 @@ footer {
   justify-content: space-between;
   align-items: center;
 
-  background-color: #FFC5D8;
+  background-color: #fed9e5;
   padding: 0 40px;
   margin: 0;
 
-  .left {
-    width: 50%;
+  .hours {
+    width: 40%
   }
 
-  .right {
-    width: 40%;
+  .contact {
+    width: 33.3%
+  }
+  .location {
+    width: 33.3%
   }
 }

@@ -1,13 +1,53 @@
-header {
+nav {
   height: 100px;
   width: 100vw;
-  background-color: #FFC5D8;
+  background-color: #fed9e5;
   display: flex;
-  flex-direction: row;
+  justify-content: space-between;
+  position: fixed;
+  z-index: 10;
+}
+
+nav .logo {
+  max-width: 20%;
+  margin-left: 20px;
+  display: flex;
   justify-content: flex-start;
   align-items: center;
 }
 
-header .logo {
-  margin-left: 40px;
+#logo-image {
+  width: 50px;
+}
+
+#logo-wordmark {
+  font-family: 'Baloo Chettan 2';
+  font-weight: 200;
+  color: black;
+}
+
+nav .sign-in {
+  max-width: 40%;
+  margin-right: 30px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+#login {
+  font-family: 'Baloo Chettan 2';
+  padding-right: 2em;
+}
+
+#login:hover {
+  color: #e698b0;
+}
+
+#register {
+  font-family: 'Baloo Chettan 2';
+  padding-right: 2em;
+}
+
+#register:hover {
+  color: #e698b0;
 }

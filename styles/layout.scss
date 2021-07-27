@@ -7,10 +7,10 @@ body {
 }
 
 button.confirm {
-  border: 1px solid green;
+  border: 1px solid #5eb978;
   font-family: 'Open Sans', sans-serif;
   font-size: 12pt;
-  color: green;
+  color: #5eb978;
   background-color: transparent;
   box-shadow: none;
   border-radius: 5px;
@@ -19,15 +19,8 @@ button.confirm {
 }
 
 button.confirm:hover {
-  border: 1px solid green;
-  font-family: 'Open Sans', sans-serif;
-  font-size: 12pt;
   color: white;
-  background-color: green;
-  box-shadow: none;
-  border-radius: 5px;
-  padding: 7px 10px;
-  margin: 5px;
+  background-color: #5eb978;
   cursor: pointer;
 }
 
