@@ -46,11 +46,11 @@ const waitingConfirmation = require("./routes/waiting_confirmation");
 // Note: Feel free to replace the example routes below with your own
 app.use("/api/users", usersRoutes(db));
 app.use("/api/widgets", widgetsRoutes(db));
-app.use("/menu", itemsRoutes(db));
+app.use("/api/menu", itemsRoutes(db));
 app.use("/admin", adminRouter);
 app.use("/home", homeRouter);
 app.use("/order_confirmation", orderConfirmationRouter);
-app.use("/order_details", orderDetailsRoutes(db));
+app.use("/api/order_details", orderDetailsRoutes(db));
 app.use("/waiting_confirmation", waitingConfirmation);
 // Note: mount other resources here, using the same pattern above
 
