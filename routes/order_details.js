@@ -11,7 +11,7 @@ module.exports = function (db) {
     .then((data) => {
       console.log("data.rows: ", data.rows);
       const templateVars = { orderItems: data.rows };
-      /* Render the order_details page */
+      /* Render the menu page */
       res.render('order_details', templateVars);
       })
 
