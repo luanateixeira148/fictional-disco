@@ -35,6 +35,20 @@ router.get ('/', (req, res) => {
 
 });
 
+// router.get ('/', (req, res) => {
+
+//   const sql = `INSERT INTO order_items (item_id, quantity)
+//   VALUES (${cart.items.product}) `
+//   db.query (sql)
+//     .then (() => {
+
+//     })
+
+
+//   const templateVars = { menuItems: cart };
+//   res.render('menu', templateVars);
+
+// });
 
 // Gary's way
 
@@ -53,7 +67,7 @@ router.post('/', (req, res) => {
 
   res.cookie('cart', JSON.stringify(cart));
 
-  console.log('new cart:', cart);
+  // console.log('new cart:', cart);
 
   res.redirect('/menu');
 });
