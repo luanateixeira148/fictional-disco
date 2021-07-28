@@ -19,6 +19,10 @@
   <link rel="stylesheet" href="../styles/layout.css">
   <link rel="stylesheet" href="../styles/typography.css">
 
+  <!-- Scripts -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" referrerpolicy="no-referrer"></script>
+  <script src="/scripts/app.js"></script>
+
   <title>Menu</title>
 </head>
 <body>
@@ -49,9 +53,10 @@
               <p id="category"><%= item.category %></p>
             </div>
           </div>
-          <form action="POST">
+          <form class="add-to-order">
+            <input type="hidden" name="item_id" value=<%= item.id %> >
             <input class="qty" name='qty' type="number">
-            <button class="confirm">Add to order</button>
+            <button type="submit" class="confirm">Add to order</button>
           </form>
         </div>
         <% }; %>
@@ -63,8 +68,13 @@
         <button class="confirm">Checkout</button>
       </form>
     </div>
-
+    <div id="cart"></div>
   </main>
   <%- include('partials/_footer') %>
+
+  <!-- Scripts -->
+  <!-- <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
+  <script type="text/javascript" src="/scripts/app.js"></script> -->
+
 </body>
 </html>
