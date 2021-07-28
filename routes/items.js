@@ -14,10 +14,6 @@ module.exports = function (db) {
         const templateVars = { menuItems: data.rows };
         res.render('menu', templateVars);
       })
-
-
-
-
   });
   return router;
 };
