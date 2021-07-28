@@ -3,7 +3,7 @@ const authToken = process.env.TOKEN_TWILIO;
 const client  = require('twilio')(accountSid, authToken);
 
 
-const messageCustomer = (customer, restaurant, time, order_url) => {
+const messageCustomer = (customer, restaurant, time, order_url) => { //sends a message about when the order is ready and if they want to check the eta
   const message = `Hello ${(customer)}, your order from ${restaurant} should be ready in ${time} mins! You can check the ETA at ${order_url}.`
 
 client.messages.create({
@@ -17,12 +17,12 @@ client.messages.create({
 });
 }
 
-const messComplete = (customer, restaurant, order_url) => {
+const messComplete = (customer, restaurant, order_url) => {//sends a message about when the order is ready and if they want to check the eta
   const message = `Hello ${(customer)}, your order from ${restaurant} is now ready! You can verify at ${order_url}.`
 
   client.messages.create({
     body: message,
-    to: '+12345678901',
+    to: '+12345678901', // Text this number
     from: '+18722334590',
   }, (err, message) => {
     if (err) {
