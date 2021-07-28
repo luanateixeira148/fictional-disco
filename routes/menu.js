@@ -36,33 +36,20 @@ router.get ('/', (req, res) => {
 });
 
 
-// POST route to add item to cart by setting cookies and returning to the same page
+// Gary's way
+
 router.post('/', (req, res) => {
 
   let cartText = req.cookies['cart'];
+  const cart = cartText ? JSON.parse(cartText) : {items: []};
 
-  console.log(cartText);
-  let cart = JSON.parse(cartText);
+  console.log('***CART:***', cart);
 
-  if (!cart) {
-    cart = {items: []};
-  }
-
-  if (!cart.items) {
-    cart.items = [];
-  }
-
-  console.log('previous cart:', cart);
-
-  console.log('cart.items:', cart.items);
+  // console.log('cart.items:', cart.items);
   const product = req.body.item_name;
   const quantity = req.body.qty;
 
   cart.items.push({product, quantity});
-
-
-  // create addToCart function,
-  // const cart = updateCart(req, product, quantity)
 
   res.cookie('cart', JSON.stringify(cart));
 
@@ -72,11 +59,35 @@ router.post('/', (req, res) => {
 });
 
 
-/*
-set cookie as empty object (json?)
-everytime someone add something to the order, loop through the cookie object and see if there is key
-if yes, change quantity
-if no, create key
-*/
+
+// // Joe Lee's way
+// router.post('/', (req, res) => {
+
+//   const product = req.body.item_name;
+//   const quantity = req.body.qty;
+
+//   if (!req.cookies['cart']) {
+
+//     const initialOrder = JSON.stringify([{product, quantity}]);
+//     res.cookie('cart', initialOrder);
+
+//   } else {
+
+//   // console.log('req.cookies:', req.cookies);
+//   let cartText = req.cookies.cart;
+
+//   let cart = JSON.parse(cartText);
+
+//   // cart.push({product, quantity});
+//   let updatedCart = [{product, quantity}, ...cart]
+
+//   res.cookie('cart', JSON.stringify(updatedCart));
+//   console.log('updated cart:', req.cookies.cart);
+
+//   }
+
+//   res.redirect('/menu');
+//  });
+
 
 module.exports = router;
