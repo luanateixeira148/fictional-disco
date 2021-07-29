@@ -17,7 +17,7 @@ $(() => {
 
   const cart = [];
   const $form = $('.add-to-order')
-  $form.submit( function (event) {
+  $form.submit(function(event) {
     event.preventDefault();
     const data = $(this).serialize();
     const split = data.split('&');
@@ -32,12 +32,24 @@ $(() => {
     console.log('cart:', cart);
 
     // if quantity = 0, show error
-    // $.post('/menu', data)
-    //   .then(() => {
-    //     console.log('YAY');
-    //   })
+    $.post('/menu', {'cart': cart})
+      .then(() => {
+        console.log('YAY');
+      })
 
   });
+
+  const $checkout = $('.checkout');
+  $checkout.on('submit', function(event) {
+    event.preventDefault();
+
+    console.log('HELLO');
+    $.get('/order_details')
+      .then(() => {
+        console.log('YAY ORDER');
+      })
+
+    });
 
   const $cart = $('#cart');
   const renderItem = function(item) {
