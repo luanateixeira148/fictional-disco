@@ -15,26 +15,28 @@ module.exports = function (db) {
     ORDER BY orders.id
     ;
     `;
-
     const sql2 = `
     SELECT * FROM orders
     ;`
-
-
     // const values = [req.params.order_id];
 
     db.query(sql2)
-      .then(console.log('THEN'))
+      .then(console.log('Managed to run query inside GET /order_details'))
+      // .then(() => {
+      //   console.log('Managed to run THEN after');
+      //   res.render('order_details');
+      //   console.log('Managed to run res.render order_details');
+      // })
+
       .then((order) => {
-        console.log("data.rows: ", order.rows);
-        // const templateVars = { orderItems: order.rows };
+        //order.rows is an array of order objects
+        console.log("order.rows: ", order.rows);
+        const templateVars = { orderItems: order.rows };
         /* Render the order_details page */
         // res.redirect('order_details', templateVars);
-        res.render('order_details');
+        res.render('order_details', templateVars);
         })
     });
 
   return router;
-
-
 };

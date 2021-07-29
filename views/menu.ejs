@@ -37,8 +37,8 @@
       </div>
     </div>
     <div class="categories">
-      <div id="category-one">
-        <h1>MILK TEAS</h1>
+      <div class="category-one">
+        <h1>DRINK MENU</h1>
       </div>
       <div class="menu-items">
         <!-- start of template for item card -->
@@ -46,12 +46,15 @@
         <div class="item-card">
           <img class="food-photo" src=<%= item.photo_url %> alt="">
           <div class="details">
-            <h3><%= item.name %></h3>
-            <p><%= item.description %></p>
-            <div class="price-tag">
-              <p id="price"><%= item.price %></p>
-              <p id="category"><%= item.category %></p>
-            </div>
+              <h3 id="item-name"><%= item.name %></h3>
+              <p id="description"><%= item.description %></p>
+          </div>
+          <div class="price-tag">
+            <p id="price">$<%= item.price / 100 %>.00</p>
+            <p id="item-id">#<%= item.id %></p>
+            <% if (item.category_id === 1) { item.category_id = 'Milky' } else if (item.category_id === 2) {
+              item.category_id = 'Fruity' } else if (item.category_id === 3) { item.category_id = 'Smoothie'}; %>
+            <p id="category"><%= item.category_id %></p>
           </div>
           <form class="add-to-order">
             <input type="hidden" name="item_id" value=<%= item.id %> >
@@ -62,13 +65,26 @@
         <% }; %>
         <!-- end of template for item card -->
       </div>
+      <br>
+      <div class="category-one">
+        <h1>YOUR ORDER</h1>
+      </div>
     </div>
-    <div class="confirmation">
-      <form class="checkout">
-        <button class="confirm">Checkout</button>
-      </form>
-    </div>
-    <div id="cart"></div>
+      <div class="checkout-area">
+        <div class="my-cart">
+          <div id="cart-header">
+            <img id="cart-icon" src="https://static.thenounproject.com/png/1359635-200.png">
+            <h3>My Cart</h3>
+          </div>
+          <div id="cart"></div>
+          <div class="confirmation">
+            <form class="checkout">
+              <button class="confirm">Checkout</button>
+            </form>
+          </div>
+        </div>
+      </div>
+
   </main>
   <%- include('partials/_footer') %>
 

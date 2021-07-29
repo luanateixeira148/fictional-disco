@@ -70,7 +70,7 @@ main {
     justify-content: center;
     padding: 1em;
 
-    #category-one {
+    .category-one {
       margin-bottom: 5em;
       content: "";
       height: 2.5px;
@@ -78,12 +78,12 @@ main {
       border-bottom: 1px solid #78c9d7;
     }
 
-    #category-one h1 {
+    .category-one h1 {
       position: relative;
       color: #78c9d7;
     }
 
-    #category-one h1:after {
+    .category-one h1:after {
       content: "";
       position: absolute;
       width: 100%;
@@ -98,11 +98,12 @@ main {
 
     .menu-items {
       display: flex;
+      justify-content: center;
       flex-direction: row;
       flex-wrap: wrap;
 
       .item-card {
-        margin: 20px;
+        margin: 15px;
         padding: 20px;
         width: 200px;
 
@@ -112,39 +113,47 @@ main {
         align-items: center;
 
         border-radius: 5px;
-        // box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
         box-shadow: rgba(0, 0, 0, 0.10) 0px 1px 3px 0px;
 
         .food-photo {
           width: 200px;
           height: 300px;
-          background-color: hotpink;
         }
 
         .details {
           display: flex;
           flex-direction: column;
           justify-content: center;
-          align-items: flex-start;
+          align-items: center;
+          text-align: center;
+        }
+
+        #description {
+          margin: 0;
+          // border-top: 1px solid #e698b0;
         }
 
         .price-tag {
           display: flex;
           justify-content: space-between;
-          margin-bottom: 5px;
         }
 
-        .price-tag p {
-          margin-right: 10px;
+        .price-tag p, #item-id {
           border-radius: 5px;
           padding: 2px;
-          padding-left: 1em;
-          padding-right: 1em;
+          padding-left: 0.5em;
+          padding-right: 0.5em;
           color: white;
         }
 
         #price {
           background-color: #d4c87f;
+          margin-right: 1em;
+        }
+
+        #item-id {
+          background-color: #e698b0;
+          margin-right: 1em;
         }
 
         #category {
@@ -175,5 +184,33 @@ main {
 
 }
 
+#cart-icon {
+  width: 25px;
+  margin-right: 0.4em;
+}
 
+#cart-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 
+.checkout-area {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+.my-cart {
+  margin: 1em;
+  padding: 2em;
+  width: 30%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  border-radius: 5px;
+  box-shadow: rgba(0, 0, 0, 0.10) 0px 1px 3px 0px;
+}

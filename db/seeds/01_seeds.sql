@@ -11,13 +11,13 @@ INSERT INTO categories (name) VALUES ('Milky'), ('Fruity'), ('Smoothie');
 -- Add values into items table
 INSERT INTO items (name, description, price, photo_url, category_id)
 VALUES
-('Brown Sugar Milk Tea', 'Signature milk tea with brown sugar syrup', 550,
+('Brown Sugar Milk Tea', 'Signature milk tea with brown sugar syrup', 500,
 'https://www.ohhowcivilized.com/wp-content/uploads/brown-sugar-tea-latte-7.jpg', 1),
 
 ('Roasted Milk Tea', 'Delicious Japanese milk tea topped with pearls',
-550, 'https://www.ohhowcivilized.com/wp-content/uploads/bubble-tea-5.jpg', 1),
+500, 'https://www.ohhowcivilized.com/wp-content/uploads/bubble-tea-5.jpg', 1),
 
-('Thai Milk Tea', 'Robust black tea sweetened with evaporated milk', 550,
+('Thai Milk Tea', 'Robust black tea sweetened with evaporated milk', 500,
 'https://www.ohhowcivilized.com/wp-content/uploads/thai-iced-tea-7.jpg', 1),
 
 ('Matcha Milk Tea', 'Earthy matcha mixed with fresh milk', 500,

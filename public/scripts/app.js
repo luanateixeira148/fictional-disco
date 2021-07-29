@@ -16,6 +16,8 @@ console.log('***App.js is connected***');
 $(() => {
 
   const cart = [];
+  // clicking the "Add to order" button stores an orderItem to the frontend cart
+  // and calls a post /menu request to update the orders and order_items table in the db
   const $form = $('.add-to-order')
   $form.submit(function(event) {
     event.preventDefault();
@@ -26,7 +28,7 @@ $(() => {
       const keyValue = datum.split('=');
       orderItem[keyValue[0]] = +keyValue[1];
     }
-
+    // each orderItem is an object with item_id and qty
     cart.push(orderItem);
     renderCart(cart);
     console.log('cart:', cart);
@@ -34,26 +36,38 @@ $(() => {
     // if quantity = 0, show error
     $.post('/menu', {'cart': cart})
       .then(() => {
-        console.log('YAY');
+        console.log('Calling post request to menu...');
       })
 
   });
+
+  // const $checkout = $('.checkout');
+  // $checkout.on('submit', function(event) {
+  //   event.preventDefault();
+
+  //   console.log('Clicked checkout button!');
+  //   $.get('/order_details')
+  //     .then(() => {
+  //       console.log('Get request to /order_details sent!');
+  //     })
+
+  // });
 
   const $checkout = $('.checkout');
   $checkout.on('submit', function(event) {
     event.preventDefault();
 
-    console.log('HELLO');
-    $.get('/order_details')
+    console.log('Clicked checkout button!');
+    $.get('/orders')
       .then(() => {
-        console.log('YAY ORDER');
+        console.log('Get request to /orders sent!');
       })
 
-    });
+  });
 
   const $cart = $('#cart');
   const renderItem = function(item) {
-    const $item = $(`<h2> ${item.item_id}, ${item.qty} </h2>`);
+    const $item = $(`<p> Item # ${item.item_id} Qty: ${item.qty} </p>`);
     return $item;
   }
 

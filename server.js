@@ -36,7 +36,9 @@ app.use(express.static("public"));
 // Note: Feel free to replace the example routes below with your own
 const usersRoutes = require("./routes/users");
 const widgetsRoutes = require("./routes/widgets");
-const itemsRoutes = require("./routes/items");
+// const itemsRoutes = require("./routes/items");
+const itemsRoutes = require("./routes/order_items");
+const ordersRoutes = require("./routes/orders");
 const adminRouter = require("./routes/admin");
 const homeRouter = require("./routes/home");
 const orderConfirmationRouter = require("./routes/order_confirmation");
@@ -47,11 +49,13 @@ const waitingConfirmation = require("./routes/waiting_confirmation");
 // Note: Feel free to replace the example routes below with your own
 app.use("/api/users", usersRoutes(db));
 app.use("/api/widgets", widgetsRoutes(db));
+// The "/" links with the jQuery requests from app.js
 app.use("/menu", itemsRoutes(db));
+app.use("/orders", ordersRoutes(db));
 app.use("/admin", adminRouter);
 app.use("/home", homeRouter);
 app.use("/order_confirmation", orderConfirmationRouter);
-app.use("/order_details", orderDetailsRoutes(db));
+// app.use("/order_details", orderDetailsRoutes(db));
 // app.use("/order_details/:id", orderDetailsRoutes(db));
 app.use("/waiting_confirmation", waitingConfirmation);
 // Note: mount other resources here, using the same pattern above
