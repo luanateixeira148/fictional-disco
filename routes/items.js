@@ -3,7 +3,7 @@ const router = express.Router();
 
 module.exports = function (db) {
 
-  // GET /items
+  // GET /items // rendering the items on the page
   router.get('/', (req, res) => {
     console.log("connected to database!");
     const sql = `SELECT * FROM items`;
@@ -19,6 +19,10 @@ module.exports = function (db) {
     console.log('POSTING IS WORKING');
 
     // insert into the orders table (user id) + RETURNING id (creates the order table)
+    const sql = `
+      INSERT INTO orders (user_id)
+      VALUES (1);
+    `
 
     // loop through cart array and insert each item into the order table
     // promise.all
@@ -33,6 +37,7 @@ module.exports = function (db) {
     Promise.all(promises).then((response) => {
 
       //all done here (send SMS here)
+
     })
 
 

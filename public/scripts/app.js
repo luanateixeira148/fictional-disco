@@ -14,25 +14,26 @@
 console.log('***App.js is connected***');
 
 $(() => {
-  // Ajax POST to a route that just adds the item in your cart table
 
-  // volatile memory
   const cart = [];
-
   const $form = $('.add-to-order')
   $form.submit( function (event) {
     event.preventDefault();
     const data = $(this).serialize();
-    console.log('data:', data);
-    cart.push(data);
-    console.log(cart);
+    const split = data.split('&');
+    const orderItem = {};
+    for (const datum of split) {
+      const keyValue = datum.split('=');
+      orderItem[keyValue[0]] = +keyValue[1];
+    }
+
+    cart.push(orderItem);
     renderCart(cart);
+    console.log('cart:', cart);
 
     // if quantity = 0, show error
-
     // $.post('/menu', data)
     //   .then(() => {
-
     //     console.log('YAY');
     //   })
 
@@ -40,7 +41,7 @@ $(() => {
 
   const $cart = $('#cart');
   const renderItem = function(item) {
-    const $item = $(`<h2> ${item} </h2>`);
+    const $item = $(`<h2> ${item.item_id}, ${item.qty} </h2>`);
     return $item;
   }
 
