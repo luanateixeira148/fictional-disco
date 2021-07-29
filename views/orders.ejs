@@ -36,7 +36,18 @@
           <div class="order-card">
 
             <div class="details">
+
               <h3><%= orders %></h3>
+
+              <!-- contains all of the details from the table orders -->
+              <!-- for (const order_details of orderDetails) {  -->
+
+              <h3>ORDER ID:<%= orders[0].id %></h3>
+              <h3>STATUS:<%= orders[0].order_status %></h3>
+              <h3>Total Price:<%= orders[0].total_price %></h3>
+              <h3>Total Items:<%= orders[0].total_items %></h3>
+
+              <!--  };  -->
 
             </div>
           </div>

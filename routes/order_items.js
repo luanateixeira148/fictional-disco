@@ -28,27 +28,36 @@ module.exports = function (db) {
       VALUES (1)
       RETURNING *;
     `
+    let orderObject;
     // This ensures orders by this user shows up in the orders table
     db.query(newOrderSql)
       .then((data) => data.rows[0])
       .then((order) => {
+        orderObject = order;
         // const { id } = order;
         // loop through cart array and insert each item into order_items
-        // orders.forEach((order) => {
-
-        cart.forEach(() => {
+        const promises = [];
+        cart.forEach((item) => {
           // const { item_id } = order;
-          const qty = req.body.cart[0].qty;
-          const item_id = req.body.cart[0].item_id;
+          const qty = item.qty;
+          //FIX THIS TO UPDATE ITEM ID
+          const item_id = item.item_id;
           const newItemSql = `
             INSERT INTO order_items (item_id, order_id, quantity)
             VALUES ($1, $2, $3) RETURNING *;
           `;
-          const values = [item_id, 1, qty];
+          const values = [item_id, orderObject.id , qty];
           // each order_item is inserted into the order_items table
-          db.query(newItemSql, values);
+          const itemPromise = db.query(newItemSql, values);
+          promises.push(itemPromise);
         });
-        res.json(order);
+
+        // returns a singular promise to cover stack of promises
+        return Promise.all(promises)
+      })
+      .then(() => {
+        res.json(orderObject);
+        //FIRE SMS FROM RESTAURANT HERE
       })
       .catch((err) => console.log("Error:", err.message));
 

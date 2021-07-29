@@ -33,11 +33,7 @@ $(() => {
     renderCart(cart);
     console.log('cart:', cart);
 
-    // if quantity = 0, show error
-    $.post('/menu', {'cart': cart})
-      .then(() => {
-        console.log('Calling post request to menu...');
-      })
+
 
   });
 
@@ -56,12 +52,21 @@ $(() => {
   const $checkout = $('.checkout');
   $checkout.on('submit', function(event) {
     event.preventDefault();
-
     console.log('Clicked checkout button!');
-    $.get('/orders')
-      .then(() => {
-        console.log('Get request to /orders sent!');
+    // if quantity = 0, show error
+    $.post('/menu', {'cart': cart})
+      .then((response) => {
+        console.log(response);
+        console.log('Calling post request to menu...');
+        window.location = `/orders/${response.id}`;
       })
+    console.log('Post to menu finished!');
+
+    // $.get('/orders')
+    //   .then(() => {
+    //     console.log('Get request to /orders sent!');
+    //   })
+    // console.log('Get to orders page finished!');
 
   });
 

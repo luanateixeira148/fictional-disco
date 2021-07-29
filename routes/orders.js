@@ -4,7 +4,7 @@ const router = express.Router();
 module.exports = function(db) {
 
   // GET /orders // grabs all the orders from a single user
-  router.get('/', (req, res) => {
+  router.get('/:id', (req, res) => {
 
     // const orderID = req.params.order_id;
     const queryString = `
@@ -17,11 +17,17 @@ module.exports = function(db) {
       ORDER BY orders.id DESC;
     `;
     // const values = [orderID];
-    const values = [1];
+    const values = [req.params.id];
+    const sql2 = `
+    SELECT * FROM orders
+    JOIN order_items ON orders.id = order_id
+    WHERE orders.id = 9
+    ;`
 
     db.query(queryString, values)
       .then((data) => {
         const orders = data.rows;
+        console.log("orders: ", orders);
         const templateVars = { orders };
         return res.render('orders', templateVars);
       })
