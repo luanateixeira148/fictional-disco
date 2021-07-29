@@ -19,33 +19,7 @@ module.exports = function(db) {
   // GET /order_details => When a user is viewing their cart
   router.get('/', (req, res) => {
     console.log("getting order_items from database!");
-<<<<<<< HEAD
-    // const userID = req.user.id;
-    const sql = `
-    SELECT *, sum(quantity * price) as total_price, sum(quantity) as total_items
-    FROM orders
-    JOIN users ON user_id = users.id
-    JOIN order_items ON orders.id = order_id
-    JOIN items ON item_id = items.id
-    WHERE user_id = $1
-    GROUP BY orders.id
-    ORDER BY orders.id DESC;
-    `;
-    const queryStr = `
-    SELECT *, sum(quantity * price) as total_price, sum(quantity) as total_items
-    FROM orders
-    JOIN users ON user_id = users.id
-    JOIN order_items ON orders.id = order_id
-    JOIN items ON item_id = items.id;`
-    // const values = [userID];
 
-    db.query(queryStr)
-      .then((data) => {
-        console.log("data.rows: ", data.rows);
-        const templateVars = { orderItems: data.rows };
-        /* Render the order_details page */
-        res.render('order_details', templateVars);
-=======
     const sql = `
     SELECT *, sum(quantity * price) as total_price, sum(quantity) as total_items
     FROM orders
@@ -71,7 +45,7 @@ module.exports = function(db) {
         /* Render the order_details page */
         // res.redirect('order_details', templateVars);
         res.render('order_details');
->>>>>>> 74b927cb6258acb78b903349571046720de0f8cf
+
         })
     });
 

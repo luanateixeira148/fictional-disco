@@ -51,12 +51,8 @@ app.use("/api/menu", itemsRoutes(db));
 app.use("/admin", adminRouter);
 app.use("/home", homeRouter);
 app.use("/order_confirmation", orderConfirmationRouter);
-<<<<<<< HEAD
-app.use("/api/order_details", orderDetailsRoutes(db));
-=======
 app.use("/order_details", orderDetailsRoutes(db));
 // app.use("/order_details/:id", orderDetailsRoutes(db));
->>>>>>> 74b927cb6258acb78b903349571046720de0f8cf
 app.use("/waiting_confirmation", waitingConfirmation);
 // Note: mount other resources here, using the same pattern above
 

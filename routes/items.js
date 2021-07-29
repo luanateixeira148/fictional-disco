@@ -3,11 +3,7 @@ const router = express.Router();
 
 module.exports = function(db) {
 
-<<<<<<< HEAD
-  // GET /menu
-=======
   // GET /items // rendering the items on the page
->>>>>>> 74b927cb6258acb78b903349571046720de0f8cf
   router.get('/', (req, res) => {
     console.log("getting menu items from database...");
     const sql = `SELECT * FROM items`;
@@ -50,20 +46,7 @@ module.exports = function(db) {
       const promise = db.query(item, values);
       promises.push(promise);
 
-<<<<<<< HEAD
-  });
 
-  // // GET /menu/:id
-  // router.get('/:id', (req, res) => {
-  //   db.query('SELECT * FROM items WHERE id = $1;', [req.params.id])
-  //     .then((data) => {
-  //       const templateVars = { menuItems: data.rows[0] };
-  //       /* Render the menu page with a single menu item*/
-  //       res.render('menu', templateVars);
-  //     })
-  // });
-
-=======
       console.log('cart inside loop:', cart);
     }
 
@@ -78,7 +61,6 @@ module.exports = function(db) {
     console.log('cart outside loop:', cart);
   });
 
->>>>>>> 74b927cb6258acb78b903349571046720de0f8cf
   return router;
 };
 
