@@ -9,6 +9,7 @@ const bodyParser = require("body-parser");
 const sass       = require("node-sass-middleware");
 const app        = express();
 const morgan     = require('morgan');
+const twilio     = require('twilio');
 
 // PG database client/connection setup
 const { Pool } = require('pg');
@@ -52,7 +53,7 @@ app.use("/api/widgets", widgetsRoutes(db));
 // The "/" links with the jQuery requests from app.js
 app.use("/menu", itemsRoutes(db));
 app.use("/orders", ordersRoutes(db));
-app.use("/admin", adminRouter);
+app.use("/admin", adminRouter(db));
 app.use("/home", homeRouter);
 app.use("/order_confirmation", orderConfirmationRouter);
 // app.use("/order_details", orderDetailsRoutes(db));

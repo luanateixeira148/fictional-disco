@@ -58,7 +58,7 @@
           </div>
           <form class="add-to-order">
             <input type="hidden" name="item_id" value=<%= item.id %> >
-            <input class="qty" name='qty' type="number">
+            <input class="qty" name='qty' type="number" min="0" max="10">
             <button type="submit" class="confirm">Add to order</button>
           </form>
         </div>

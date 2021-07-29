@@ -19,6 +19,10 @@
   <link rel="stylesheet" href="../styles/layout.css">
   <link rel="stylesheet" href="../styles/typography.css">
 
+  <!-- Scripts -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" referrerpolicy="no-referrer"></script>
+  <script src="/scripts/app.js"></script>
+
   <title>Admin</title>
 </head>
 <body>
@@ -38,10 +42,13 @@
             <li>Order Item, quantity</li>
             <li>Order Item, quantity</li>
           </ul>
+
+          <h3><%= order %></h3>
+
         </div>
         <div class="right">
-          <form action="">
-            <input class="estimated-time" type="text" placeholder="Enter pickup time">
+          <form action="/admin/orders/<%= order.id %>" method="POST">
+            <input class="estimated-time" name='ETA' type="number" placeholder="Enter pickup time">
             <button type="submit" class="confirm">Accept Order</button>
           </form>
         </div>

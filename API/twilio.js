@@ -1,14 +1,13 @@
 const accountSid = process.env.ACCOUNT_TWILIO;
 const authToken = process.env.TOKEN_TWILIO;
+const phoneTwilio = process.env.PHONE_TWILIO;
 const client  = require('twilio')(accountSid, authToken);
 
-
-const messageCustomer = (customer, number, time) => { //sends a message about when the order is ready and if they want to check the eta
-  const message = `Hello ${(customer)}, your order from Teashop should be ready in ${time} mins!`;
-  number = String(number);
+const messageCustomer = (time) => { //sends a message about when the order is ready and if they want to check the eta
+  const message = `Hello customer! Your order from Teashop should be ready in ${time} mins!`;
   client.messages.create({
     body: message,
-    to: number, // Text this number
+    to: phoneTwilio, // Text Akshay's number
     from: '+18722334590', // From a valid Twilio number
   },(err, message) => {
     if (err) {
@@ -32,7 +31,6 @@ const messComplete = (customer, number) => {//sends a message about when the ord
     return message;
   });
 };
-
 
 
 module.exports = {

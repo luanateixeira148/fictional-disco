@@ -16,13 +16,8 @@ module.exports = function(db) {
       GROUP BY orders.id
       ORDER BY orders.id DESC;
     `;
-    // const values = [orderID];
+    // pass in the id from the end of the url as our order id
     const values = [req.params.id];
-    const sql2 = `
-    SELECT * FROM orders
-    JOIN order_items ON orders.id = order_id
-    WHERE orders.id = 9
-    ;`
 
     db.query(queryString, values)
       .then((data) => {
