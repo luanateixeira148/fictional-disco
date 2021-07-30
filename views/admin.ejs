@@ -4,44 +4,56 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Confirmation</title>
+
+  <!-- External CSS -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+<style> @import url('https://fonts.googleapis.com/css2?family=Baloo+Chettan+2&display=swap');</style>
 
   <!-- CSS -->
-  <!-- <link rel="stylesheet" href="../styles/admin.css"> -->
-  <link rel="stylesheet" href="../styles/order_details.css">
-
+  <link rel="stylesheet" href="../styles/admin.css">
+  <!-- <link rel="stylesheet" href="../styles/order_confirmation.css"> -->
 
   <!-- Scripts -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" referrerpolicy="no-referrer"></script>
   <script src="/scripts/app.js"></script>
 
-  <title>Admin</title>
 </head>
+
+
+
 <body>
-  <%- include('partials/_header') %>
   <main>
     <!-- Start of Template for incoming individual orders -->
-    <div class="waiting-confirmation">
-      <div class="header">
-        <h2>Orders waiting for confirmation</h2>
-      </div>
-      <div class="main">
-        <div class="left">
-          <h3>Incoming Order Details</h2>
+    <div>
 
+      <div>
+        <h2>Incoming Order Details</h2>
+        <div>
           <h3>ORDER ID:<%= order.id %></h3>
-              <h3>STATUS:<%= order.order_status %></h3>
-
-        </div>
-        <div class="right">
-          <form action="/admin/orders/<%= order.id %>" method="POST">
-            <input class="estimated-time" name='ETA' type="number" placeholder="Enter pickup time">
-            <button type="submit" class="confirm">Accept Order</button>
-          </form>
+          <h3>STATUS:<%= order.order_status %></h3>
         </div>
       </div>
-      <hr>
+
+      <div>
+        <form action="/admin/orders/<%= order.id %>" method="POST">
+          <input class="estimated-time" name='ETA' type="number" placeholder="Enter pickup time">
+          <button type="submit" class="confirm">Accept Order</button>
+        </form>
+      </div>
+
     </div>
+    <div>
+      <div>
+        <h2>The customer order has been confirmed</h2>
+        <h3>Message has been sent via SMS</h2>
+      </div>
+    </div>
+
     <!-- End of Template for incoming individual orders -->
   </main>
+
 </body>
 </html>

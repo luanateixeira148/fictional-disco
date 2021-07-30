@@ -4,12 +4,12 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Menu</title>
 
   <!-- Scripts -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" referrerpolicy="no-referrer"></script>
   <script src="/scripts/app.js"></script>
 
-  <title>Menu</title>
 </head>
 <body>
   <%- include('partials/_header') %>
@@ -19,12 +19,12 @@
       <div class="welcome-message">
         <h1 id="welcome-greeting">Welcome to the teashop!</h1>
         <h3 id="welcome-slogan">Your one stop shop for milk tea, fruit tea, and smoothies.</h3>
-        <a href="#category-one"><button class="order" >View our menu</button></a>
+        <a href="#drink-menu"><button class="order" >View our menu</button></a>
       </div>
     </div>
     <div class="categories">
       <div class="category-one">
-        <h1>DRINK MENU</h1>
+        <h1 id='drink-menu'>DRINK MENU</h1>
       </div>
       <div class="menu-items">
         <!-- start of template for item card -->
@@ -60,7 +60,7 @@
         <div class="my-cart">
           <div id="cart-header">
             <img id="cart-icon" src="https://static.thenounproject.com/png/1359635-200.png">
-            <h3>My Cart</h3>
+            <h3 id="my-cart-text">My Cart</h3>
           </div>
           <div id="cart"></div>
           <div class="confirmation">

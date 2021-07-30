@@ -44,10 +44,7 @@ module.exports = function(db) {
       })
   });
 
-  // GET /admin/confirm
-  // router will be /confirm
-  // this just renders the admin/confirm page
-
+  // GET /admin/confirm => renders the order_id and status
   router.get('/confirm', (req, res) => {
     console.log('We are able to GET /confirm');
     res.render('confirm')

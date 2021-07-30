@@ -17,31 +17,21 @@
 <body>
   <%- include('partials/_header') %>
   <main>
-    <h2>Your Order Details</h2>
-    <div class="items-list">
-      <div class="menu-items">
-        <!-- start of template for order card -->
+    <div class="thank-you">
+      <div class="sliding-background"></div>
+      <div class="order-message">
+        <h2 class="order-message-text">Your order has been placed!</h2>
 
-          <div class="order-card">
+        <div class="order-details">
+          <!-- contains all of the details from the table orders -->
+          <!-- for (const order_details of orderDetails) {  -->
+          <h3 class="order-detail">Order ID: <%= orders[0].id %></h3>
+          <h3 class="order-detail">Status: <%= orders[0].order_status %></h3>
+          <h3 class="order-detail">Total Price: $<%= orders[0].total_price / 100 %>.00</h3>
+          <h3 class="order-detail">Total Items: <%= orders[0].total_items %></h3>
+          <!--  };  -->
+        </div>
 
-            <div class="details">
-
-              <!-- <h3><%= orders %></h3> -->
-
-              <!-- contains all of the details from the table orders -->
-              <!-- for (const order_details of orderDetails) {  -->
-
-              <h3>ORDER ID:<%= orders[0].id %></h3>
-              <h3>STATUS:<%= orders[0].order_status %></h3>
-              <h3>Total Price:<%= orders[0].total_price %></h3>
-              <h3>Total Items:<%= orders[0].total_items %></h3>
-
-              <!--  };  -->
-
-            </div>
-          </div>
-
-          <!-- end of template for order card -->
       </div>
     </div>
   </main>
