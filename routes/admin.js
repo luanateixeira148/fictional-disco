@@ -17,6 +17,7 @@ module.exports = function(db) {
     db.query(sql, values)
       .then((data) => {
         const order = data.rows[0];
+        console.log('order: ', order);
         const templateVars = { order };
         res.render('admin', templateVars);
       })
@@ -37,13 +38,20 @@ module.exports = function(db) {
     db.query(sql, values)
       .then(() => {
         twilio.message(time);
-        res.send('Post to admin worked');
-        //res.redirect(/admin/confirm)
+        console.log('message sent to twilio!')
+        // res.send('Post to admin worked');
+        res.redirect('/admin/confirm');
       })
   });
 
   // GET /admin/confirm
   // router will be /confirm
   // this just renders the admin/confirm page
+
+  router.get('/confirm', (req, res) => {
+    console.log('We are able to GET /confirm');
+    res.render('confirm')
+
+  });
   return router;
 }

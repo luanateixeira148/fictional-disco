@@ -1,6 +1,6 @@
 -- Add values into users table for customers
 INSERT INTO users (name, phone_number, email, password)
-VALUES ('Akshay', '7789869424', 'raphaella.robles@gmail.com', 'customer');
+VALUES ('Akshay', '1234567890', 'customer@gmail.com', 'customer');
 -- Add values into users table for admin
 INSERT INTO users (name, phone_number, email, password, is_admin)
 VALUES ('Admin', '1234567890', 'admin@gmail.com', 'admin', TRUE);

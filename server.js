@@ -54,13 +54,13 @@ app.use("/api/widgets", widgetsRoutes(db));
 app.use("/menu", itemsRoutes(db));
 app.use("/orders", ordersRoutes(db));
 app.use("/admin", adminRouter(db));
+// app.use("/admin/confirm", adminConfirmRouter(db));
 app.use("/home", homeRouter);
 app.use("/order_confirmation", orderConfirmationRouter);
 // app.use("/order_details", orderDetailsRoutes(db));
 // app.use("/order_details/:id", orderDetailsRoutes(db));
 app.use("/waiting_confirmation", waitingConfirmation);
 // Note: mount other resources here, using the same pattern above
-
 
 // Home page
 // Warning: avoid creating more routes in this file!
