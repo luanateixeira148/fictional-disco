@@ -1,55 +1,56 @@
-body {
-  margin: 0;
-  padding: 0;
-}
-
 main {
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-  width: 100vw;
+  // padding: 10% 0;
 }
-
-
-// Orders waiting for confirmation
 
 .waiting-confirmation {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: 60%;
-  margin: 20px;
+  justify-content: space-between;
+  margin-top: 7rem;
+  margin-bottom: 2rem;
+  // max-width: 100%;
+  // width: 60%;
+  // margin: 20px;
 }
 
-.waiting-confirmation .main {
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-}
-
-.waiting-confirmation .main > .left {
-
-}
-
-.waiting-confirmation .main > .right{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.waiting-confirmation .main > .right > form {
+.order-message {
+  // position: absolute;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  padding: 1.2em;
+  margin-top: 1.2em;
+  z-index: 8;
+
+  margin: 1em;
+  padding: 2em;
+  border-radius: 5px;
+  box-shadow: rgba(0, 0, 0, 0.10) 0px 1px 3px 0px;
+
 }
 
-hr {
-  width: 100%;
-  color: gray;
-  margin: 10px;
+.order-message-text {
+  font-family: 'Baloo Chettan 2', sans-serif;
 }
 
+.order-detail {
+  margin-top: 0;
+}
 
+.cropped {
+  width: 300px; /* width of container */
+  height: 235px; /* height of container */
+  overflow: hidden;
+  // border: 1px solid black;
+}
+
+#happy-drinks {
+  width: 500px;
+  margin: -40px 0px 0px -100px;
+
+}

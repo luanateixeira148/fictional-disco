@@ -9,6 +9,7 @@ const bodyParser = require("body-parser");
 const sass       = require("node-sass-middleware");
 const app        = express();
 const morgan     = require('morgan');
+const twilio     = require('twilio');
 
 // PG database client/connection setup
 const { Pool } = require('pg');
@@ -23,6 +24,7 @@ app.use(morgan('dev'));
 
 app.set("view engine", "ejs");
 app.use(bodyParser.urlencoded({ extended: true }));
+app.use(express.json());
 app.use("/styles", sass({
   src: __dirname + "/styles",
   dest: __dirname + "/public/styles",
@@ -35,7 +37,9 @@ app.use(express.static("public"));
 // Note: Feel free to replace the example routes below with your own
 const usersRoutes = require("./routes/users");
 const widgetsRoutes = require("./routes/widgets");
-const itemsRoutes = require("./routes/items");
+// const itemsRoutes = require("./routes/items");
+const itemsRoutes = require("./routes/order_items");
+const ordersRoutes = require("./routes/orders");
 const adminRouter = require("./routes/admin");
 const homeRouter = require("./routes/home");
 const orderConfirmationRouter = require("./routes/order_confirmation");
@@ -46,14 +50,17 @@ const waitingConfirmation = require("./routes/waiting_confirmation");
 // Note: Feel free to replace the example routes below with your own
 app.use("/api/users", usersRoutes(db));
 app.use("/api/widgets", widgetsRoutes(db));
+// The "/" links with the jQuery requests from app.js
 app.use("/menu", itemsRoutes(db));
-app.use("/admin", adminRouter);
+app.use("/orders", ordersRoutes(db));
+app.use("/admin", adminRouter(db));
+// app.use("/admin/confirm", adminConfirmRouter(db));
 app.use("/home", homeRouter);
 app.use("/order_confirmation", orderConfirmationRouter);
-app.use("/order_details", orderDetailsRoutes(db));
+// app.use("/order_details", orderDetailsRoutes(db));
+// app.use("/order_details/:id", orderDetailsRoutes(db));
 app.use("/waiting_confirmation", waitingConfirmation);
 // Note: mount other resources here, using the same pattern above
-
 
 // Home page
 // Warning: avoid creating more routes in this file!

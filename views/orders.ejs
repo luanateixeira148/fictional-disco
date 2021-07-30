@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Orders</title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="../styles/order_details.css">
+
+  <!-- Scripts -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" referrerpolicy="no-referrer"></script>
+  <script src="/scripts/app.js"></script>
+
+</head>
+<body>
+  <%- include('partials/_header') %>
+  <main>
+    <div class="thank-you">
+      <div class="sliding-background"></div>
+      <div class="order-message">
+        <h2 class="order-message-text">Your order has been placed!</h2>
+
+        <div class="order-details">
+          <!-- contains all of the details from the table orders -->
+          <!-- for (const order_details of orderDetails) {  -->
+          <h3 class="order-detail">Order ID: <%= orders[0].id %></h3>
+          <h3 class="order-detail">Status: <%= orders[0].order_status %></h3>
+          <h3 class="order-detail">Total Price: $<%= orders[0].total_price / 100 %>.00</h3>
+          <h3 class="order-detail">Total Items: <%= orders[0].total_items %></h3>
+          <!--  };  -->
+        </div>
+
+      </div>
+    </div>
+  </main>
+  <%- include('partials/_footer') %>
+</body>
+</html>

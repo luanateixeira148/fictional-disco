@@ -1,6 +1,6 @@
 -- Add values into users table for customers
 INSERT INTO users (name, phone_number, email, password)
-VALUES ('Raphaella Robles', '7789869424', 'raphaella.robles@gmail.com', 'customer');
+VALUES ('Akshay', '1234567890', 'customer@gmail.com', 'customer');
 -- Add values into users table for admin
 INSERT INTO users (name, phone_number, email, password, is_admin)
 VALUES ('Admin', '1234567890', 'admin@gmail.com', 'admin', TRUE);
@@ -11,13 +11,13 @@ INSERT INTO categories (name) VALUES ('Milky'), ('Fruity'), ('Smoothie');
 -- Add values into items table
 INSERT INTO items (name, description, price, photo_url, category_id)
 VALUES
-('Brown Sugar Milk Tea', 'Signature milk tea with brown sugar syrup', 550,
+('Brown Sugar Milk Tea', 'Signature milk tea with brown sugar syrup', 500,
 'https://www.ohhowcivilized.com/wp-content/uploads/brown-sugar-tea-latte-7.jpg', 1),
 
 ('Roasted Milk Tea', 'Delicious Japanese milk tea topped with pearls',
-550, 'https://www.ohhowcivilized.com/wp-content/uploads/bubble-tea-5.jpg', 1),
+500, 'https://www.ohhowcivilized.com/wp-content/uploads/bubble-tea-5.jpg', 1),
 
-('Thai Milk Tea', 'Robust black tea sweetened with evaporated milk', 550,
+('Thai Milk Tea', 'Robust black tea sweetened with evaporated milk', 500,
 'https://www.ohhowcivilized.com/wp-content/uploads/thai-iced-tea-7.jpg', 1),
 
 ('Matcha Milk Tea', 'Earthy matcha mixed with fresh milk', 500,

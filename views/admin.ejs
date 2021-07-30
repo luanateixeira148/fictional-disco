@@ -4,69 +4,67 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Confirmation</title>
 
   <!-- External CSS -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Averia+Sans+Libre&display=swap" rel="stylesheet">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
   <style> @import url('https://fonts.googleapis.com/css2?family=Baloo+Chettan+2&display=swap');</style>
 
   <!-- CSS -->
-  <link rel="stylesheet" href="../styles/admin.css">
-  <link rel="stylesheet" href="../styles/layout.css">
-  <link rel="stylesheet" href="../styles/typography.css">
+  <link rel="stylesheet" href="/styles/layout.css">
+  <link rel="stylesheet" href="/styles/typography.css">
+  <link rel="stylesheet" href="/styles/waiting_confirmation.css">
 
-  <title>Admin</title>
+  <!-- Scripts -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" referrerpolicy="no-referrer"></script>
+  <script src="/scripts/app.js"></script>
+
 </head>
+<header>
+  <nav>
+    <div class="logo">
+      <img id="logo-image" src="https://static.thenounproject.com/png/1377058-200.png"></img>
+      <h2 id ="logo-wordmark"><strong>tea</strong>shop</h2>
+    </div>
+    <div class="sign-in">
+      <h3 id="login">logged in as</h3>
+      <h3 id="register">ADMIN</h3>
+    </div>
+  </nav>
+</header>
+
 <body>
-  <%- include('partials/_header') %>
   <main>
     <!-- Start of Template for incoming individual orders -->
     <div class="waiting-confirmation">
-      <div class="header">
-        <h2>Orders waiting for confirmation</h2>
-      </div>
-      <div class="main">
-        <div class="left">
-          <h3>Customer Name</h3>
-          <h3>Order Number</h2>
-          <ul>
-            <li>Order Item, quantity</li>
-            <li>Order Item, quantity</li>
-            <li>Order Item, quantity</li>
-          </ul>
+
+      <div class="order-message">
+        <h2 class="order-message-text">Incoming Order Details</h2>
+        <div class="order-details">
+          <h3 class="order-detail">Order ID: <%= order.id %></h3>
+          <h3 class="order-detail">Status: <%= order.order_status %></h3>
+          <h3 class="order-detail">Total Price: $<%= order.total_price / 100 %>.00</h3>
+          <h3 class="order-detail">Total Items: <%= order.total_items %></h3>
         </div>
-        <div class="right">
-          <form action="">
-            <input class="estimated-time" type="text" placeholder="Enter pickup time">
-            <button type="submit" class="confirm">Accept Order</button>
-          </form>
-        </div>
+
+        <form id="accept-order-form" action="/admin/orders/<%= order.id %>" method="POST">
+          <div id="eta-form">
+
+            <h3>ETA: </h3>
+            <input class="estimated-time" name='ETA' type="number" min="0" max="60">
+          </div>
+
+          <button type="submit" class="confirm">Accept Order</button>
+        </form>
       </div>
-      <hr>
+
+
+
     </div>
     <!-- End of Template for incoming individual orders -->
-    <!-- Start of Template for Confirmed Orders -->
-    <div class="confirmed-orders">
-      <div class="header">
-        <h2>Confirmed Orders</h2>
-      </div>
-      <div class="main">
-        <div>
-          <h3>Customer Name</h3>
-          <h3>Order Number</h2>
-          <ul>
-            <li>Order Item, quantity</li>
-            <li>Order Item, quantity</li>
-            <li>Order Item, quantity</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-    <!-- End of Template for Confirmed Orders -->
   </main>
+  <%- include('partials/_footer') %>
 </body>
 </html>
