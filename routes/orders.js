@@ -3,7 +3,7 @@ const router = express.Router();
 
 module.exports = function(db) {
 
-  // GET /orders // grabs all the orders from a single user
+  // GET /orders => grabs all the orders from a single user
   router.get('/:id', (req, res) => {
 
     // const orderID = req.params.order_id;

@@ -1,10 +1,17 @@
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  // padding: 10% 0;
+}
 
 .waiting-confirmation {
   display: flex;
-  justify-content: center;
-  margin-top: 6rem;
-  margin-bottom: 20rem;
-  max-width: 100%;
+  justify-content: space-between;
+  margin-top: 7rem;
+  margin-bottom: 2rem;
+  // max-width: 100%;
   // width: 60%;
   // margin: 20px;
 }
@@ -19,6 +26,12 @@
   padding: 1.2em;
   margin-top: 1.2em;
   z-index: 8;
+
+  margin: 1em;
+  padding: 2em;
+  border-radius: 5px;
+  box-shadow: rgba(0, 0, 0, 0.10) 0px 1px 3px 0px;
+
 }
 
 .order-message-text {
@@ -29,4 +42,15 @@
   margin-top: 0;
 }
 
+.cropped {
+  width: 300px; /* width of container */
+  height: 235px; /* height of container */
+  overflow: hidden;
+  // border: 1px solid black;
+}
 
+#happy-drinks {
+  width: 500px;
+  margin: -40px 0px 0px -100px;
+
+}

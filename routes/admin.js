@@ -5,7 +5,7 @@ const users = require('./users');
 
 module.exports = function(db) {
 
-  // GET /admin // renders the customer's order from the database
+  // GET /admin => renders a customer's order from the database
   router.get ('/orders/:id', (req, res) => {
     // admin template now has access to the order object
     console.log('Get route to admin is working!')
@@ -13,17 +13,29 @@ module.exports = function(db) {
     SELECT * FROM orders
     WHERE orders.id = $1
     ;`
+    const sql2 = `
+      SELECT orders.*, sum(quantity * price) as total_price, sum(quantity) as total_items
+      FROM orders
+      JOIN order_items ON orders.id = order_id
+      JOIN items ON item_id = items.id
+      WHERE orders.id = $1
+      GROUP BY orders.id
+      ORDER BY orders.id DESC;
+    `;
+    // pass in the id from the end of the url as our order id
     const values = [req.params.id];
-    db.query(sql, values)
+    db.query(sql2, values)
       .then((data) => {
         const order = data.rows[0];
         console.log('order: ', order);
-        const templateVars = { order };
+        const orders = data.rows;
+        console.log("orders: ", orders);
+        const templateVars = { order, orders };
         res.render('admin', templateVars);
       })
   });
 
-  // POST /admin/orders/:id
+  // POST /admin/orders/:id => updates an order's status and ETA, sends SMS to customer
   router.post('/orders/:id', (req, res) => {
     console.log('req.body:', req.body)
     // + converts this into a number
@@ -39,7 +51,6 @@ module.exports = function(db) {
       .then(() => {
         twilio.message(time);
         console.log('message sent to twilio!')
-        // res.send('Post to admin worked');
         res.redirect('/admin/confirm');
       })
   });
